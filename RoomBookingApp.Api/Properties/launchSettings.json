@@ -12,7 +12,7 @@
     "RoomBookingApp.Api": {
       "commandName": "Project",
       "launchBrowser": true,
-      "applicationUrl": "http://localhost:7429",
+      "applicationUrl": "http://localhost:17424",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }

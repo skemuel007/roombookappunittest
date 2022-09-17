@@ -1,9 +1,11 @@
 ﻿using System;
+using System.Reflection;
 using Microsoft.EntityFrameworkCore;
 using RoomBookingApp.Domain;
 
 namespace RoomBookingApp.Persistence
 {
+    // https://kontext.tech/article/275/sqlite-in-net-core-with-entity-framework-core
     public class RoomBookingAppDbContext : DbContext
     {
         public RoomBookingAppDbContext(DbContextOptions<RoomBookingAppDbContext> options
@@ -13,6 +15,15 @@ namespace RoomBookingApp.Persistence
 
         public DbSet<Room> Rooms { get; set; }
         public DbSet<RoomBooking> RoomBookings { get; set; }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseSqlite("Filename=RoomBooking.db", options =>
+            {
+                options.MigrationsAssembly(Assembly.GetExecutingAssembly().FullName);
+            });
+            base.OnConfiguring(optionsBuilder);
+        }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
