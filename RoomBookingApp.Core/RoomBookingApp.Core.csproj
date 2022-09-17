@@ -9,9 +9,16 @@
   <ItemGroup>
     <None Remove="Processors\" />
     <None Remove="Models\" />
+    <None Remove="DataServices\" />
+    <None Remove="Enums\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Processors\" />
     <Folder Include="Models\" />
+    <Folder Include="DataServices\" />
+    <Folder Include="Enums\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RoomBookingApp.Domain\RoomBookingApp.Domain.csproj" />
   </ItemGroup>
 </Project>

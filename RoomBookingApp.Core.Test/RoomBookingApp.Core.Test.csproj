@@ -21,10 +21,12 @@
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
     <PackageReference Include="Shouldly" Version="4.1.0" />
+    <PackageReference Include="Moq" Version="4.18.2" />
   </ItemGroup>
 
   <ItemGroup>
     <None Remove="Shouldly" />
+    <None Remove="Moq" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\RoomBookingApp.Core\RoomBookingApp.Core.csproj" />
